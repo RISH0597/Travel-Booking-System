@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: travel-ease-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: travel-ease
+  template:
+    metadata:
+      labels:
+        app: travel-ease
+    spec:
+      containers:
+      - name: travel-ease
+        image: your-dockerhub-username/travel-ease-app:latest
+        ports:
+        - containerPort: 3000
+        env:
+        - name: MONGO_URI
+          value: mongodb://mongo-service:27017/travel-ease-db
