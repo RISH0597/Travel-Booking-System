@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: travel-ease
-        image: your-dockerhub-username/travel-ease-app:latest
+        image: rishitham03/travel-ease-app:latest
         ports:
         - containerPort: 3000
         env:
